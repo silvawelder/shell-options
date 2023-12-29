@@ -1,0 +1,42 @@
+#!/bin/bash
+
+Help()
+{
+   # Display Help
+   echo "Add description of the script functions here."
+   echo
+   echo "Syntax: samplescript [-h|r]"
+   echo "options:"
+   echo "h     Print this Help."
+   echo "r     role [role1|role2]."
+   echo "V     Print software version and exit."
+   echo
+}
+
+
+while getopts ":hr:" option; do
+   case $option in
+      h) # display Help
+         Help
+         exit;;
+      r) # Enter a name
+         role=$OPTARG;;       
+     \?) # Invalid option
+         echo "Error: Invalid option"
+         exit;;
+   esac
+done
+
+echo "$role"
+
+if [ "$role" = "master" ]; then
+    echo "role master";
+
+elif [ "$role" = "agent" ]; then
+    echo "role agent";
+
+else
+    echo "invalid Role option"
+fi
+
+echo "$role!"
