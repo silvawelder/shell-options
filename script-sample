@@ -29,11 +29,11 @@ done
 
 echo "$role"
 
-if [ "$role" = "master" ]; then
-    echo "role master";
+if [ "$role" = "role1" ]; then
+    echo "role 1";
 
-elif [ "$role" = "agent" ]; then
-    echo "role agent";
+elif [ "$role" = "role2" ]; then
+    echo "role 2";
 
 else
     echo "invalid Role option"
